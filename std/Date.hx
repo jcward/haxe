@@ -51,8 +51,11 @@ extern class Date
 	function new(year : Int, month : Int, day : Int, hour : Int, min : Int, sec : Int ) : Void;
 
 	/**
-		Returns the timestamp of the date. It might only have a per-second
-		precision depending on the platforms.
+		Returns the timestamp of `this` Date in milliseconds.
+		
+		Note that in cpp and neko targets Date only supports second
+		resolution (e.g. 1454698271000.) To obtain the current timestamp
+		with better precision, see the `Sys.time` API.
 	**/
 	function getTime() : Float;
 
